@@ -5,18 +5,18 @@ mod front_of_house;
 
 mod back_of_house
 {
-    fn fix_incorrect_order()
+    fn _fix_incorrect_order()
     {
-        cook_order();
-        super::deliver_order(); // 使用 super 调用父模块
+        _cook_order();
+        super::_deliver_order(); // 使用 super 调用父模块
     }
 
-    fn cook_order() {}
+    fn _cook_order() {}
 
     pub struct Breakfast
     {
-        pub toast: String,      // 公有字段
-        seasonal_fruit: String, // 私有字段
+        pub toast: String,       // 公有字段
+        _seasonal_fruit: String, // 私有字段
     }
 
     impl Breakfast
@@ -25,7 +25,7 @@ mod back_of_house
         {
             return Breakfast {
                 toast: String::from(toast),
-                seasonal_fruit: String::from("peaches"),
+                _seasonal_fruit: String::from("peaches"),
             };
         }
     }
@@ -44,4 +44,4 @@ pub fn eat_at_restaurant()
     RestaurantHosting::add_to_waitlist();
 }
 
-fn deliver_order() { RestaurantHosting::add_to_waitlist(); }
+fn _deliver_order() { RestaurantHosting::add_to_waitlist(); }
