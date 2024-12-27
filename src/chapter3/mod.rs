@@ -83,12 +83,122 @@ fn array_error()
     println!("The value of the element at index {index} is: {element}");
 }
 
+fn test_function()
+{
+    println!("\nTest function");
+
+    // 表达式和语句
+    let y: i32 = {
+        let x: i32 = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {y}");
+
+    another_function(9);
+
+    // 函数的返回值等同于函数体最后一个表达式的值
+    fn another_function(x: i32) -> i32
+    {
+        println!("The value of x is: {x}");
+
+        if x >= 5
+        {
+            println!("The value of x is greater than or equal to 5");
+            return 5;
+        }
+
+        x + 1
+    }
+
+    let res: i32 = another_function(5);
+    println!("The value of res is: {res}");
+}
+
+fn test_branches()
+{
+    println!("\nTest branches");
+
+    let number: i32 = 3;
+
+    if number < 5
+    {
+        println!("The condition was true");
+    }
+    else if number == 5
+    {
+        println!("The condition was 5");
+    }
+    else
+    {
+        println!("The condition was false");
+    }
+
+    let condition: bool = true;
+    let number: i32 = if condition { 5 } else { 6 }; // 代码块的值是其最后一个表达式的值
+    println!("The value of number is: {number}");
+}
+
+fn test_loops()
+{
+    println!("\nTest loops");
+
+    let mut count: i32 = 0;
+    'counting_up: loop
+    {
+        println!("count = {count}");
+        let mut remaining: i32 = 10;
+
+        loop
+        {
+            println!("remaining = {remaining}");
+            if remaining == 9
+            {
+                break; // 退出内层循环
+            }
+            if count == 2
+            {
+                break 'counting_up; // 利用标签退出外层循环
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("End count = {count}");
+
+    let a: [i32; 5] = [10, 20, 30, 40, 50];
+    let mut index: usize = 0;
+    while index < 5
+    {
+        println!("the value is: {}", a[index]);
+
+        index += 1;
+    }
+
+    for element in a
+    {
+        println!("the value is: {element}");
+    }
+
+    // 利用vector的rev方法反转迭代器
+    for number in (1..4).rev()
+    {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+}
+
 pub fn chapter3()
 {
-    println!("Hello from 3.rs!");
+    println!("\nHello from 3.rs!");
     variables();
     test_shadowing();
     test_tuple_and_array();
 
     array_error();
+    test_function();
+
+    test_branches();
+    test_loops();
 }
