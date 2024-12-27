@@ -3,6 +3,9 @@
 // 第七章 餐厅
 mod front_of_house;
 
+// 第八章 集合
+pub mod collections;
+
 mod back_of_house
 {
     fn _fix_incorrect_order()

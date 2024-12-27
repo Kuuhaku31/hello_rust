@@ -2,7 +2,5 @@
 
 fn main()
 {
-    println!("Hello, Rust!");
-
-    hello_rust::eat_at_restaurant();
+    println!("=== Hello, Rust! ===");
 }
