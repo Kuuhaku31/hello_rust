@@ -9,6 +9,9 @@ pub mod collections;
 // 第九章 错误处理
 pub mod errors;
 
+// 第十二章 I/O 项目：构建一个命令行程序
+pub mod minigrep;
+
 mod back_of_house
 {
     fn _fix_incorrect_order()
