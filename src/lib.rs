@@ -6,6 +6,9 @@ mod front_of_house;
 // 第八章 集合
 pub mod collections;
 
+// 第九章 错误处理
+pub mod errors;
+
 mod back_of_house
 {
     fn _fix_incorrect_order()
