@@ -1,9 +1,10 @@
 // main.rs
 
-use hello_rust::minigrep;
+// 图形库egui
+mod test_egui;
 
 fn main()
 {
     println!("=== Hello, Rust! ===");
-    minigrep::minigrep();
+    test_egui::test_egui();
 }

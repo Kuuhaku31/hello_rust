@@ -12,6 +12,9 @@ pub mod errors;
 // 第十二章 I/O 项目：构建一个命令行程序
 pub mod minigrep;
 
+// 第十三章 函数式语言特性：迭代器和闭包
+pub mod closures;
+
 mod back_of_house
 {
     fn _fix_incorrect_order()
